@@ -39,6 +39,8 @@ export default function Welcome() {
                     rel="stylesheet"
                 ></link>
             </Head>
+
+            {/* Navigation Bar */}
             <motion.nav className="fixed top-0 z-50 flex w-full justify-center bg-transparent">
                 <motion.div className="flex items-center gap-10 border-b border-white/20 pt-6 pb-5">
                     <motion.img src={RoboCodeLogo} className="mr-20 h-12" />
@@ -55,10 +57,9 @@ export default function Welcome() {
                     </motion.div>
                 </motion.div>
             </motion.nav>
+
+            {/* Whole top part */}
             <motion.main className="min-h-[max(600px,100vh+50px)] min-w-screen bg-blue-950">
-                <motion.div className="absolute top-0 left-0 min-h-[max(600px,100vh+50px)] w-full overflow-hidden">
-                    {Blobs()}
-                </motion.div>
                 <motion.div className="px-48 pt-36">
                     <motion.h1
                         className="text-[52px] leading-tight font-bold"
@@ -75,11 +76,24 @@ export default function Welcome() {
                         <br /> hands-on robotics and coding programs.
                     </motion.p>
 
-                    <motion.a className="rounded-full bg-yellow-400 px-4 py-2 font-bold text-blue-950">
+                    <motion.button
+                        className="rounded-full bg-yellow-400 px-6 py-3 font-semibold text-blue-950 transition-all duration-100 hover:bg-yellow-300"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.2, delay: 0.1 }}
+                    >
                         Learn More
-                    </motion.a>
+                    </motion.button>
+                </motion.div>
+
+                <motion.div className="pointer-events-none absolute top-0 left-0 h-full w-full">
+                    {Blobs()}
                 </motion.div>
             </motion.main>
+
+            {/* Whole bottom part */}
             <motion.div className="relative -bottom-0 min-h-screen overflow-visible bg-blue-950 pt-16">
                 <motion.div className="absolute top-0 right-0 z-0 max-h-32 w-screen transform overflow-hidden select-none">
                     <motion.img
@@ -101,6 +115,7 @@ export default function Welcome() {
 
                 <motion.div className="absolute top-0 left-0 z-1 max-h-32 w-screen transform overflow-hidden select-none">
                     <motion.img
+                        className="w-full"
                         src={BottomSubForegroundBlob}
                         animate={{
                             y: [0, 10, 0],
@@ -116,8 +131,9 @@ export default function Welcome() {
                     />
                 </motion.div>
 
-                <motion.div className="absolute top-0 left-0 z-2 max-h-32 w-screen transform overflow-hidden select-none">
+                <motion.div className="absolute top-0 left-0 z-2 max-h-32 w-full transform overflow-hidden select-none">
                     <motion.img
+                        className="w-full"
                         src={BottomForegroundBlob}
                         animate={{
                             y: [0, 6, 0],
@@ -132,9 +148,10 @@ export default function Welcome() {
                     />
                 </motion.div>
 
-                <motion.div className="min-h-screen bg-white p-24">
+                {/* White part */}
+                <motion.div className="bg-white p-24">
                     <motion.div className="flex w-full gap-24">
-                        <motion.div className="h-12 w-1/2">
+                        <motion.div className="w-1/2">
                             <motion.p
                                 className="text-6xl leading-tight font-bold text-blue-950"
                                 style={{ fontFamily: 'Fredoka' }}
@@ -150,7 +167,7 @@ export default function Welcome() {
                                 challenges, we teach learners how to:
                             </motion.p>
                         </motion.div>
-                        <motion.div className="h-12 w-1/2">
+                        <motion.div className="w-1/2">
                             <motion.ul>
                                 {/* Build and Program Robots */}
                                 <motion.li>
@@ -165,7 +182,7 @@ export default function Welcome() {
                                             Build and Program Robots
                                         </motion.p>
                                     </motion.div>
-                                    <motion.p className="mb-4 ml-15 text-gray-400">
+                                    <motion.p className="mb-4 ml-15 text-gray-500">
                                         Learn to bring machines to life step by
                                         step.
                                     </motion.p>
@@ -225,16 +242,71 @@ export default function Welcome() {
                                             />
                                         </motion.div>
                                         <motion.p className="text-2xl font-semibold text-blue-950">
-                                            Apply Tech to the Real World
+                                            Prepare for the Future
                                         </motion.p>
                                     </motion.div>
                                     <motion.p className="mb-4 ml-15 text-gray-400">
-                                        Gain skills for STEM education, competitions, and careers.
+                                        Gain skills for STEM education,
+                                        competitions, and careers.
                                     </motion.p>
                                 </motion.li>
 
                                 <hr className="h-[1px] border-none bg-black/10" />
                             </motion.ul>
+                        </motion.div>
+                    </motion.div>
+
+                    {/* Programs Section */}
+                    <motion.div className="mt-16 flex w-full flex-col items-center justify-center">
+                        <motion.p className="rounded-full bg-red-100 px-4 py-2 text-sm text-red-700">
+                            PROGRAMS
+                        </motion.p>
+                        <motion.h1
+                            className="mt-6 text-5xl font-bold text-blue-950"
+                            style={{ fontFamily: 'Fredoka' }}
+                        >
+                            Explore Programs we Offer
+                        </motion.h1>
+                        <motion.p className="mt-4 text-center text-gray-400">
+                            We offer robotics and coding programs designed for
+                            different levels of learners.
+                            <br /> Each program is hands-on, engaging, and
+                            builds real-world skills.
+                        </motion.p>
+
+                        <motion.div className="mt-8 flex w-[min(75%,750px)] gap-4">
+                            {/* Card 1 */}
+                            <motion.div className="flex-1 rounded-lg border border-gray-200 p-3">
+                                <motion.p className="text-center font-semibold text-blue-950">
+                                    Beginner Robotics
+                                </motion.p>
+                                <motion.p className="mt-2 text-center text-gray-400">
+                                    Learn the basics of building and programming
+                                    robots using simple drag-and-drop coding.
+                                </motion.p>
+                            </motion.div>
+
+                            {/* Card 2 */}
+                            <motion.div className="flex-1 rounded-lg border border-gray-200 p-3">
+                                <motion.p className="text-center font-semibold text-blue-950">
+                                    Intermediate Robotics & Coding
+                                </motion.p>
+                                <motion.p className="mt-2 text-center text-gray-400">
+                                    Level up with bigger projects, sensors, and
+                                    problem-solving challenges.
+                                </motion.p>
+                            </motion.div>
+
+                            {/* Card 3 */}
+                            <motion.div className="flex-1 rounded-lg border border-gray-200 p-3">
+                                <motion.p className="text-center font-semibold text-blue-950">
+                                    Advanced & Specialized Tracks
+                                </motion.p>
+                                <motion.p className="mt-2 text-center text-gray-400">
+                                    Explore AI, automation, and advanced
+                                    robotics concepts for future innovators.
+                                </motion.p>
+                            </motion.div>
                         </motion.div>
                     </motion.div>
                 </motion.div>
