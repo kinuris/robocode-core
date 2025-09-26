@@ -88,7 +88,7 @@ export default function Welcome() {
                     </motion.button>
                 </motion.div>
 
-                <motion.div className="pointer-events-none absolute top-0 left-0 h-full w-full">
+                <motion.div className="pointer-events-none absolute top-0 left-0 h-full w-full overflow-hidden ">
                     {Blobs()}
                 </motion.div>
             </motion.main>
