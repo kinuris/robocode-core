@@ -2,6 +2,9 @@ import { Head } from '@inertiajs/react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
+import { FeatureCard } from '../components/FeatureCard';
+import { featuresData } from '../data/features';
+
 import Blob1 from '../../js/assets/blob_1.svg';
 import Blob2 from '../../js/assets/blob_2.svg';
 import Blob3 from '../../js/assets/blob_3.svg';
@@ -17,8 +20,6 @@ import RoboCodeLogo from '../../js/assets/rcc_logo.svg';
 
 import RightBackgroundBlob from '../../js/assets/right_blob_bg.svg';
 import RightForegroundBlob from '../../js/assets/right_blob_fg.svg';
-
-import Target from '../../js/assets/target.svg';
 
 export default function Welcome() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -213,89 +214,16 @@ export default function Welcome() {
                         </motion.div>
                         <motion.div className="w-full lg:w-1/2">
                             <motion.ul>
-                                {/* Build and Program Robots */}
-                                <motion.li>
-                                    <motion.div className="flex list-none items-center gap-3 sm:gap-5">
-                                        <motion.div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-yellow-300 shadow flex-shrink-0">
-                                            <motion.img
-                                                className="w-3 sm:w-4"
-                                                src={Target}
-                                            />
-                                        </motion.div>
-                                        <motion.p className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-950">
-                                            Build and Program Robots
-                                        </motion.p>
-                                    </motion.div>
-                                    <motion.p className="mb-4 ml-11 sm:ml-15 text-gray-500 text-sm sm:text-base">
-                                        Learn to bring machines to life step by
-                                        step.
-                                    </motion.p>
-                                </motion.li>
-
-                                <hr className="h-[1px] border-none bg-black/10" />
-
-                                {/* Think Like Innovators */}
-                                <motion.li className="mt-6">
-                                    <motion.div className="flex list-none items-center gap-3 sm:gap-5">
-                                        <motion.div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-yellow-300 shadow flex-shrink-0">
-                                            <motion.img
-                                                className="w-3 sm:w-4"
-                                                src={Target}
-                                            />
-                                        </motion.div>
-                                        <motion.p className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-950">
-                                            Think Like Innovators
-                                        </motion.p>
-                                    </motion.div>
-                                    <motion.p className="mb-4 ml-11 sm:ml-15 text-gray-400 text-sm sm:text-base">
-                                        Develop problem-solving, critical
-                                        thinking, and teamwork skills.
-                                    </motion.p>
-                                </motion.li>
-
-                                <hr className="h-[1px] border-none bg-black/10" />
-
-                                {/* Apply Tech to the Real World */}
-                                <motion.li className="mt-6">
-                                    <motion.div className="flex list-none items-center gap-3 sm:gap-5">
-                                        <motion.div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-yellow-300 shadow flex-shrink-0">
-                                            <motion.img
-                                                className="w-3 sm:w-4"
-                                                src={Target}
-                                            />
-                                        </motion.div>
-                                        <motion.p className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-950">
-                                            Apply Tech to the Real World
-                                        </motion.p>
-                                    </motion.div>
-                                    <motion.p className="mb-4 ml-11 sm:ml-15 text-gray-400 text-sm sm:text-base">
-                                        Explore how robotics and AI can solve
-                                        everyday challenges.
-                                    </motion.p>
-                                </motion.li>
-
-                                <hr className="h-[1px] border-none bg-black/10" />
-
-                                {/* Prepare for the Future */}
-                                <motion.li className="mt-6">
-                                    <motion.div className="flex list-none items-center gap-3 sm:gap-5">
-                                        <motion.div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-yellow-300 shadow flex-shrink-0">
-                                            <motion.img
-                                                className="w-3 sm:w-4"
-                                                src={Target}
-                                            />
-                                        </motion.div>
-                                        <motion.p className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-950">
-                                            Prepare for the Future
-                                        </motion.p>
-                                    </motion.div>
-                                    <motion.p className="mb-4 ml-11 sm:ml-15 text-gray-400 text-sm sm:text-base">
-                                        Gain skills for STEM education,
-                                        competitions, and careers.
-                                    </motion.p>
-                                </motion.li>
-
-                                <hr className="h-[1px] border-none bg-black/10" />
+                                {featuresData.map((feature, index) => (
+                                    <FeatureCard
+                                        key={index}
+                                        title={feature.title}
+                                        description={feature.description}
+                                        icon={feature.icon}
+                                        isFirst={index === 0}
+                                        isLast={index === featuresData.length - 1}
+                                    />
+                                ))}
                             </motion.ul>
                         </motion.div>
                     </motion.div>
