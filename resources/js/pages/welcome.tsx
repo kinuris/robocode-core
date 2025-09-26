@@ -3,7 +3,9 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 import { FeatureCard } from '../components/FeatureCard';
+import { ProgramCard } from '../components/ProgramCard';
 import { featuresData } from '../data/features';
+import { programsData } from '../data/programs';
 
 import Blob1 from '../../js/assets/blob_1.svg';
 import Blob2 from '../../js/assets/blob_2.svg';
@@ -246,38 +248,13 @@ export default function Welcome() {
                         </motion.p>
 
                         <motion.div className="mt-6 sm:mt-8 flex flex-col sm:flex-row w-full max-w-4xl px-4 gap-4">
-                            {/* Card 1 */}
-                            <motion.div className="flex-1 rounded-lg border border-gray-200 p-3 sm:p-4">
-                                <motion.p className="text-center font-semibold text-blue-950 text-sm sm:text-base">
-                                    Beginner Robotics
-                                </motion.p>
-                                <motion.p className="mt-2 text-center text-gray-400 text-xs sm:text-sm">
-                                    Learn the basics of building and programming
-                                    robots using simple drag-and-drop coding.
-                                </motion.p>
-                            </motion.div>
-
-                            {/* Card 2 */}
-                            <motion.div className="flex-1 rounded-lg border border-gray-200 p-3 sm:p-4">
-                                <motion.p className="text-center font-semibold text-blue-950 text-sm sm:text-base">
-                                    Intermediate Robotics & Coding
-                                </motion.p>
-                                <motion.p className="mt-2 text-center text-gray-400 text-xs sm:text-sm">
-                                    Level up with bigger projects, sensors, and
-                                    problem-solving challenges.
-                                </motion.p>
-                            </motion.div>
-
-                            {/* Card 3 */}
-                            <motion.div className="flex-1 rounded-lg border border-gray-200 p-3 sm:p-4">
-                                <motion.p className="text-center font-semibold text-blue-950 text-sm sm:text-base">
-                                    Advanced & Specialized Tracks
-                                </motion.p>
-                                <motion.p className="mt-2 text-center text-gray-400 text-xs sm:text-sm">
-                                    Explore AI, automation, and advanced
-                                    robotics concepts for future innovators.
-                                </motion.p>
-                            </motion.div>
+                            {programsData.map((program, index) => (
+                                <ProgramCard
+                                    key={index}
+                                    title={program.title}
+                                    description={program.description}
+                                />
+                            ))}
                         </motion.div>
                     </motion.div>
                 </motion.div>
