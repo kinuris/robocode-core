@@ -5,11 +5,19 @@ import Blob1 from '../../js/assets/blob_1.svg';
 import Blob2 from '../../js/assets/blob_2.svg';
 import Blob3 from '../../js/assets/blob_3.svg';
 import Blob4 from '../../js/assets/blob_4.svg';
+
+import BottomBackgroundBlob from '../../js/assets/bottom_blob_bg.svg';
+import BottomForegroundBlob from '../../js/assets/bottom_blob_fg.svg';
+import BottomSubForegroundBlob from '../../js/assets/bottom_blob_fg_sub.svg';
+
 import LeftBackgroundBlob from '../../js/assets/left_blob_bg.svg';
 import LeftForegroundBlob from '../../js/assets/left_blog_fg.svg';
 import RoboCodeLogo from '../../js/assets/rcc_logo.svg';
+
 import RightBackgroundBlob from '../../js/assets/right_blob_bg.svg';
 import RightForegroundBlob from '../../js/assets/right_blob_fg.svg';
+
+import Target from '../../js/assets/target.svg';
 
 export default function Welcome() {
     return (
@@ -47,8 +55,10 @@ export default function Welcome() {
                     </motion.div>
                 </motion.div>
             </motion.nav>
-            <motion.main className="min-h-screen min-w-screen bg-blue-950">
-                {Blobs()}
+            <motion.main className="min-h-[max(600px,100vh+50px)] min-w-screen bg-blue-950">
+                <motion.div className="absolute top-0 left-0 min-h-[max(600px,100vh+50px)] w-full overflow-hidden">
+                    {Blobs()}
+                </motion.div>
                 <motion.div className="px-48 pt-36">
                     <motion.h1
                         className="text-[52px] leading-tight font-bold"
@@ -70,6 +80,165 @@ export default function Welcome() {
                     </motion.a>
                 </motion.div>
             </motion.main>
+            <motion.div className="relative -bottom-0 min-h-screen overflow-visible bg-blue-950 pt-16">
+                <motion.div className="absolute top-0 right-0 z-0 max-h-32 w-screen transform overflow-hidden select-none">
+                    <motion.img
+                        className="ml-auto"
+                        src={BottomBackgroundBlob}
+                        animate={{
+                            y: [0, 8, 0],
+                            x: [0, 12, 0],
+                        }}
+                        transition={{
+                            duration: 6,
+                            repeat: Infinity,
+                            repeatType: 'mirror',
+                            ease: 'easeInOut',
+                            delay: 1,
+                        }}
+                    />
+                </motion.div>
+
+                <motion.div className="absolute top-0 left-0 z-1 max-h-32 w-screen transform overflow-hidden select-none">
+                    <motion.img
+                        src={BottomSubForegroundBlob}
+                        animate={{
+                            y: [0, 10, 0],
+                            x: [0, -8, 0],
+                        }}
+                        transition={{
+                            duration: 5.5,
+                            repeat: Infinity,
+                            repeatType: 'mirror',
+                            ease: 'easeInOut',
+                            delay: 0.3,
+                        }}
+                    />
+                </motion.div>
+
+                <motion.div className="absolute top-0 left-0 z-2 max-h-32 w-screen transform overflow-hidden select-none">
+                    <motion.img
+                        src={BottomForegroundBlob}
+                        animate={{
+                            y: [0, 6, 0],
+                        }}
+                        transition={{
+                            duration: 7,
+                            repeat: Infinity,
+                            repeatType: 'mirror',
+                            ease: 'easeInOut',
+                            delay: 0.8,
+                        }}
+                    />
+                </motion.div>
+
+                <motion.div className="min-h-screen bg-white p-24">
+                    <motion.div className="flex w-full gap-24">
+                        <motion.div className="h-12 w-1/2">
+                            <motion.p
+                                className="text-6xl leading-tight font-bold text-blue-950"
+                                style={{ fontFamily: 'Fredoka' }}
+                            >
+                                We keep learning
+                                <br />
+                                Fun and Enjoyable
+                            </motion.p>
+                            <motion.p className="mt-6 text-blue-950">
+                                At Robo Code Club, we make robotics and coding
+                                fun, practical, and accessible for students.
+                                Through hands-on activities, projects, and
+                                challenges, we teach learners how to:
+                            </motion.p>
+                        </motion.div>
+                        <motion.div className="h-12 w-1/2">
+                            <motion.ul>
+                                {/* Build and Program Robots */}
+                                <motion.li>
+                                    <motion.div className="flex list-none items-center gap-5">
+                                        <motion.div className="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-300 shadow">
+                                            <motion.img
+                                                className="w-4"
+                                                src={Target}
+                                            />
+                                        </motion.div>
+                                        <motion.p className="text-2xl font-semibold text-blue-950">
+                                            Build and Program Robots
+                                        </motion.p>
+                                    </motion.div>
+                                    <motion.p className="mb-4 ml-15 text-gray-400">
+                                        Learn to bring machines to life step by
+                                        step.
+                                    </motion.p>
+                                </motion.li>
+
+                                <hr className="h-[1px] border-none bg-black/10" />
+
+                                {/* Think Like Innovators */}
+                                <motion.li className="mt-6">
+                                    <motion.div className="flex list-none items-center gap-5">
+                                        <motion.div className="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-300 shadow">
+                                            <motion.img
+                                                className="w-4"
+                                                src={Target}
+                                            />
+                                        </motion.div>
+                                        <motion.p className="text-2xl font-semibold text-blue-950">
+                                            Think Like Innvators
+                                        </motion.p>
+                                    </motion.div>
+                                    <motion.p className="mb-4 ml-15 text-gray-400">
+                                        Develop problem-solving, critical
+                                        thinking, and teamwork skills.
+                                    </motion.p>
+                                </motion.li>
+
+                                <hr className="h-[1px] border-none bg-black/10" />
+
+                                {/* Apply Tech to the Real World */}
+                                <motion.li className="mt-6">
+                                    <motion.div className="flex list-none items-center gap-5">
+                                        <motion.div className="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-300 shadow">
+                                            <motion.img
+                                                className="w-4"
+                                                src={Target}
+                                            />
+                                        </motion.div>
+                                        <motion.p className="text-2xl font-semibold text-blue-950">
+                                            Apply Tech to the Real World
+                                        </motion.p>
+                                    </motion.div>
+                                    <motion.p className="mb-4 ml-15 text-gray-400">
+                                        Explore how robotics and AI can solve
+                                        everyday challenges.
+                                    </motion.p>
+                                </motion.li>
+
+                                <hr className="h-[1px] border-none bg-black/10" />
+
+                                {/* Prepare for the Future */}
+                                <motion.li className="mt-6">
+                                    <motion.div className="flex list-none items-center gap-5">
+                                        <motion.div className="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-300 shadow">
+                                            <motion.img
+                                                className="w-4"
+                                                src={Target}
+                                            />
+                                        </motion.div>
+                                        <motion.p className="text-2xl font-semibold text-blue-950">
+                                            Apply Tech to the Real World
+                                        </motion.p>
+                                    </motion.div>
+                                    <motion.p className="mb-4 ml-15 text-gray-400">
+                                        Gain skills for STEM education, competitions, and careers.
+                                    </motion.p>
+                                </motion.li>
+
+                                <hr className="h-[1px] border-none bg-black/10" />
+                            </motion.ul>
+                        </motion.div>
+                    </motion.div>
+                </motion.div>
+            </motion.div>
         </>
     );
 }
