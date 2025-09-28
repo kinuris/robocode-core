@@ -27,7 +27,7 @@ export function Blobs() {
             <motion.img
                 src={LeftForegroundBlob}
                 alt="RoboCode Foreground Blob"
-                className="pointer-events-none absolute left-0 z-1 select-none hidden sm:block"
+                className="pointer-events-none absolute left-0 z-1 select-none hidden sm:block max-h-full"
                 animate={{
                     y: [0, -10, 0],
                     x: [0, -15, 0],
@@ -40,9 +40,9 @@ export function Blobs() {
             <motion.img
                 src={LeftBackgroundBlob}
                 alt="RoboCode Background Blob"
-                className="pointer-events-none absolute left-0 z-0 select-none hidden sm:block"
+                className="pointer-events-none absolute left-0 z-0 select-none hidden sm:block max-h-full"
                 animate={{
-                    y: [0, 15, 0],
+                    y: [0, -15, 0],
                     x: [0, -10, 0],
                 }}
                 transition={{
@@ -54,7 +54,7 @@ export function Blobs() {
             <motion.img
                 src={RightBackgroundBlob}
                 alt="RoboCode Background Blob"
-                className="pointer-events-none absolute right-0 z-0 select-none hidden sm:block"
+                className="pointer-events-none absolute right-0 z-0 select-none hidden sm:block max-h-full"
                 animate={{
                     y: [0, -12, 0],
                     x: [0, 10, 0],
@@ -68,7 +68,7 @@ export function Blobs() {
             <motion.img
                 src={RightForegroundBlob}
                 alt="RoboCode Foreground Blob"
-                className="pointer-events-none absolute right-0 z-1 select-none hidden sm:block"
+                className="pointer-events-none absolute right-0 z-1 select-none hidden sm:block max-h-full"
                 animate={{
                     y: [0, 18, 0],
                     x: [0, 15, 0],
