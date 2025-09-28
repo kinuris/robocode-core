@@ -34,8 +34,7 @@ export function Navigation({ isMobileMenuOpen, setIsMobileMenuOpen }: Navigation
                     {['Product', 'Pricing', 'Resources', 'Company', 'Contact'].map((item, index) => (
                         <motion.a
                             key={item}
-                            className="text-white/95 hover:text-white text-sm font-medium px-3 py-2 rounded-xl transition-all duration-300 hover:bg-white/15 cursor-pointer"
-                            whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
+                            className="text-white/95 hover:text-white text-sm font-medium px-3 py-2 rounded-xl transition-all duration-100 hover:bg-white/15 cursor-pointer"
                             whileTap={{ scale: 0.95 }}
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
