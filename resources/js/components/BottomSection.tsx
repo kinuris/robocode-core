@@ -59,7 +59,7 @@ export function BottomSection() {
                 />
             </motion.div>
 
-            <motion.div className="absolute top-0 left-0 z-1 sm:max-h-32 max-h-20 w-screen transform overflow-hidden select-none">
+            <motion.div className="absolute top-0 left-0 z-1 sm:max-h-32 max-h-20 w-full transform overflow-hidden select-none">
                 <motion.img
                     className="w-full"
                     src={BottomSubForegroundBlob}
